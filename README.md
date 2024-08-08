@@ -12,25 +12,25 @@ NOTICE: If you are using Alpine Linux, `doas` might be the replacement of `sudo`
 Open a Terminal and type in:
 
 ```sh
-sudo sh -c "$(wget -qO- https://github.com/daeuniverse/dae-installer/raw/main/installer.sh)" @ install
+sudo sh -c "$(wget -qO- https://github.com/IceCodeNew/dae-installer/raw/master/installer.sh)" @ install
 ```
 
 If you have difficulty accessing GitHub, you can use this command instead: 
 
 ```sh
-sudo sh -c "$(wget -qO- https://cdn.jsdelivr.net/gh/daeuniverse/dae-installer/installer.sh)" @ install use-cdn
+sudo sh -c "$(wget -qO- https://cdn.jsdelivr.net/gh/IceCodeNew/dae-installer/installer.sh)" @ install use-cdn
 ```
 
 If this script recognizes the wrong `$MACHINE`, you can manually specify it:
 
 ```sh
-sudo MACHINE="x86_64" sh -c "$(wget -qO- https://github.com/daeuniverse/dae-installer/raw/main/installer.sh)" @ install
+sudo MACHINE="x86_64_v3_avx2" sh -c "$(wget -qO- https://github.com/IceCodeNew/dae-installer/raw/master/installer.sh)" @ install
 ```
 
 ### Uninstall dae
 
 ```sh
-sudo sh -c "$(curl -sL https://raw.githubusercontent.com/daeuniverse/dae-installer/main/uninstaller.sh)"
+sudo sh -c "$(curl -sL https://raw.githubusercontent.com/IceCodeNew/dae-installer/master/uninstaller.sh)"
 ```
 
 Use `curl -sL` instead of `wget -qO-` if you want to use `curl` rather than `wget`.
