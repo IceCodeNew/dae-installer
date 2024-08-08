@@ -78,19 +78,19 @@ get_download_urls(){
     if [ "$use_cdn" = 'yes' ]; then
         systemd_service_url="https://cdn.jsdelivr.net/gh/daeuniverse/dae@$latest_version/install/dae.service"
         openrc_service_url="https://cdn.jsdelivr.net/gh/daeuniverse/dae-installer/OpenRC/dae"
-        dae_url="https://github.abskoop.workers.dev/https://github.com/daeuniverse/dae/releases/download/$latest_version/dae-linux-$MACHINE.zip"
-        dae_hash_url="https://github.abskoop.workers.dev/https://github.com/daeuniverse/dae/releases/download/$latest_version/dae-linux-$MACHINE.zip.dgst"
+        dae_url="https://mirror.ghproxy.com/https://github.com/daeuniverse/dae/releases/download/$latest_version/dae-linux-$MACHINE.zip"
+        dae_hash_url="https://mirror.ghproxy.com/https://github.com/daeuniverse/dae/releases/download/$latest_version/dae-linux-$MACHINE.zip.dgst"
         example_config_url="https://cdn.jsdelivr.net/gh/daeuniverse/dae@$latest_version/example.dae"
-        geoip_url="https://cdn.jsdelivr.net/gh/v2rayA/dist-v2ray-rules-dat/geoip.dat"
-        geosite_url="https://cdn.jsdelivr.net/gh/v2rayA/dist-v2ray-rules-dat/geosite.dat"
+        geoip_url="https://cdn.jsdelivr.net/gh/IceCodeNew/geoip@release/geoip.dat"
+        geosite_url="https://cdn.jsdelivr.net/gh/IceCodeNew/domain-list-custom@release/geosite.dat"
     else
         systemd_service_url="https://github.com/daeuniverse/dae/raw/$latest_version/install/dae.service"
         openrc_service_url="https://github.com/daeuniverse/dae-installer/raw/main/OpenRC/dae"
         dae_url="https://github.com/daeuniverse/dae/releases/download/$latest_version/dae-linux-$MACHINE.zip"
         dae_hash_url="https://github.com/daeuniverse/dae/releases/download/$latest_version/dae-linux-$MACHINE.zip.dgst"
         example_config_url="https://github.com/daeuniverse/dae/raw/$latest_version/example.dae"
-        geoip_url="https://github.com/v2rayA/dist-v2ray-rules-dat/raw/master/geoip.dat"
-        geosite_url="https://github.com/v2rayA/dist-v2ray-rules-dat/raw/master/geosite.dat"
+        geoip_url="https://github.com/IceCodeNew/geoip/raw/release/geoip.dat"
+        geosite_url="https://github.com/IceCodeNew/domain-list-custom/raw/release/geosite.dat"
     fi
 }
 
@@ -486,7 +486,7 @@ installation() {
 }
 
 should_we_install_dae() {
-    check_virtualization && check_arch    
+    check_virtualization && check_arch
     if [ "$force_install" = 'yes' ]; then
         check_online_version
         current_version='0'
